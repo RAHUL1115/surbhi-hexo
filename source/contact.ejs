@@ -1,0 +1,71 @@
+---
+{
+"title" : "Products | Surbhi Metals and Alloy",
+"description" : "Helo",
+"keyword" : "Surbhi Metals and Alloy, products",
+}
+---
+
+<div class="container mx-auto px-3 py-5 space-y-4 md:px-16">
+  <div class="space-y-8">
+    <h2 class="text-4xl text-center nunito font-bold">Contact Us</h2>
+    <div class="rounded bg-p4">
+      <div class="lg:flex lg:flex-row">
+        <div data-scroll class="flex-1 p-4">
+          <div class="bg-e1 px-4 py-6 rounded">
+            <p class="text-xl font-bold text-p1 numans">Send Your Enquiry</p>
+            <div class="bg-p1 mt-4 rounded">
+              <input v-model="name" placeholder="Your Name" type="text"
+                class="w-full py-2 px-4 bg-p1 rounded outline-none text-xl">
+            </div>
+            <div class="bg-p1 mt-6 rounded">
+              <input v-model="email" placeholder="Your Email" type="text"
+                class="w-full py-2 px-4 bg-p1 rounded outline-none text-xl">
+            </div>
+            <div class="bg-p1 mt-6 rounded">
+              <input v-model="phone" placeholder="Phone" type="text"
+                class="w-full py-2 px-4 bg-p1 rounded outline-none text-xl">
+            </div>
+            <div class="bg-p1 mt-6 rounded">
+              <textarea v-model="message" placeholder="Your Message..." rows="4"
+                class="w-full py-2 px-4 bg-p1 rounded outline-none text-xl">
+                        </textarea>
+            </div>
+            <div class="bg-p1 mt-6 rounded">
+              <button @click="sendmail"
+                class="w-full py-2 px-4 bg-p5 text-p1 bg-opacity-90 rounded outline-none text-xl">Send<button>
+            </div>
+            <p :class="{'hidden':hidden}" class="text-p1 text-center mt-5">{{showmessage}}
+              <p>
+          </div>
+        </div>
+        <div data-scroll class="flex-1 p-4">
+          <iframe class="w-full bg-p1 rounded overflow-hidden h-60 md:h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5336.464642777068!2d72.82740409044051!3d18.955708853925632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8c31d0ae88db519!2sSurbhi%20Metal%20%26%20Alloys!5e0!3m2!1sen!2sin!4v1613632236190!5m2!1sen!2sin"></iframe>
+        </div>
+      </div>
+      <div class="bg-p4 overflow-hidden block">
+        <div data-scroll class="flex-1 m-4 mt-2 bg-p1 rounded">
+          <div class="bg-p4 text-p1 bg-opacity-75 rounded">
+            <p class="text-xl text-center rounded-b">Office Address</p>
+          </div>
+          <div class="p-4">
+            <p>No. 17, 94/100 Jamnadas Building, Maruti Mandir Marg, 5th Kumbharwada, Mumbai - 400004</p>
+          </div>
+        </div>
+        <div data-scroll class="flex-1 m-4 bg-p1 rounded-lg">
+          <div class="bg-p4 text-p1 bg-opacity-75 rounded">
+            <p class="text-xl text-center rounded-b">Contact Details</p>
+          </div>
+          <div class="p-4">
+            <p><i class="fas fa-phone-alt"></i> + (91)-(22)-66595628</p>
+            <p><i class="fas fa-mobile-alt"></i> +91 9819742205 (Mr. Pravin Mali)</p>
+            <p><i class="fas fa-mobile-alt"></i> +91 8850830307</p>
+            <p><i class="far fa-envelope-open"></i> sales@reputesteel.com</p>
+            <p><i class="far fa-envelope-open"></i> reputesteel@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

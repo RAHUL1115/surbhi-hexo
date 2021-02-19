@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @variants responsive,
+    hover,
+    focus {
+        .letter-xs {
+            letter-spacing: 0.0375 rem;
+        }
+        .letter-sm {
+            letter-spacing: 0.05 rem;
+        }
+        .letter-base{
+            letter-spacing: normal;
+        }
+        .letter-md {
+            letter-spacing: 0.075rem;
+        }
+        .letter-md {
+            letter-spacing: 0.075rem;
+        }
+        .letter-xl {
+            letter-spacing: 0.0875rem;
+        }
+        .bg-p1 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(239, 247, 255, var(--tw-bg-opacity));
+        }
+        .bg-p2 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(248, 220, 129, var(--tw-bg-opacity));
+        }
+        .bg-p3 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(162, 208, 193, var(--tw-bg-opacity));
+        }
+        .bg-p4 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(33, 65, 81, var(--tw-bg-opacity));
+        }
+    
+        .text-p1 {
+            --tw-text-opacity: 1;
+            color: rgba(239, 247, 255, var(--tw-text-opacity));
+        }
+        .text-p2 {
+            --tw-text-opacity: 1;
+            color: rgba(248, 220, 129, var(--tw-text-opacity));
+        }
+        .text-p3 {
+            --tw-text-opacity: 1;
+            color: rgba(162, 208, 193, var(--tw-text-opacity));
+        }
+        .text-p4 {
+            --tw-text-opacity: 1;
+            color: rgba(33, 65, 81, var(--tw-text-opacity));
+        }
+
+        .from-p1 {
+            --tw-gradient-from: rgb(239, 247, 255);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .from-p2 {
+            --tw-gradient-from: rgb(248, 220, 129);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .from-p3 {
+            --tw-gradient-from: rgb(162, 208, 193);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .from-p4 {
+            --tw-gradient-from: rgb(33, 65, 81);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+
+        .to-p1 {
+            --tw-gradient-to: rgb(239, 247, 255);
+        }
+        .to-p2 {
+            --tw-gradient-to: rgb(248, 220, 129);
+        }
+        .to-p3 {
+            --tw-gradient-to: rgb(162, 208, 193);
+        }
+        .to-p4 {
+            --tw-gradient-to: rgb(33, 65, 81);
+        }
+    }
+}

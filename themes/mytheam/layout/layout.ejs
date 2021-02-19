@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- seo -->
+    <title><%- page.title %></title>
+    <meta property="og:title" content="<%- page.title %>" />
+    <meta name="description"
+        content="<%- page.description %>">
+    <meta property="og:description"
+        content="<%- page.description %>"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://webinclusives.com/" />
+    <meta property="og:site_name" content="web inclusives" />
+    <meta property="og:image" content="https://webinclusives.com/img/webinclusiveslogo.png" />
+    <link rel="canonical" href="https://webinclusives.com/" />
+    <link rel="alternate" hreflang="x-default" href=" https://webinclusives.com" />
+    
+    <!-- scripts -->
+    <script type="application/ld+json">
+        {
+            "url": "https://webinclusives.com/",
+            "headline": "web inclusives",
+            "image": "https://webinclusives.com/img/webinclusiveslogo.png",
+            "@type": "WebSite",
+            "name": "web inclusives",
+            "@context": "https://schema.org"
+        }
+    </script>
+
+
+    <% if(page.path == "index.html"){ %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177464251-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-177464251-1');
+    </script>
+    <% } %>
+
+    <link defer href="css/tailwind.min.css" rel="stylesheet">
+    <link defer href="css/index.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/83fa0c17b8.js" crossorigin="anonymous"></script>
+</head>
+<body class="overflow-x-hidden">
+    <%- partial('partial/navbar') %>
+    <%- partial('partial/hero') %>
+    <%- body %>
+    <%- partial('partial/footer') %>
+    <script src="js/main.js"></script>
+</body>
+</html>
