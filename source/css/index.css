@@ -1,46 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Numans&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Numans&display=swap");
 
 /* scroll bar */
 body::-webkit-scrollbar-track {
-    border-radius: 1px;
-    background-color: #ffffff;
+  border-radius: 1px;
+  background-color:  rgba(239, 247, 255);
 }
+
 body::-webkit-scrollbar {
-    width: 4px;
-	background-color: #ffffff;
+  width: 4px;
+  background-color: rgba(239, 247, 255);
 }
-body::-webkit-scrollbar-thumb{
-    border-radius: 3px;
-    background-color:#667eea;   
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color:rgba(33, 65, 81);
 }
 
 /* main css */
-.nunito{
-    font-family: 'Nunito', sans-serif !important;
+.nunito {
+  font-family: "Nunito", sans-serif !important;
 }
+
 .asap {
-    font-family: 'Asap', sans-serif !important;
+  font-family: "Asap", sans-serif !important;
 }
+
 .numans {
-    font-family: 'Numans', sans-serif !important;
+  font-family: "Numans", sans-serif !important;
 }
 
-*{
-    font-family: 'Numans', sans-serif;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+* {
+  font-family: "Numans", sans-serif;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
-.navbar{
-    z-index: 1;
+a {
+  font-family: "Asap", sans-serif;
 }
 
-.-z-1{
-    z-index: -1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+.navbar {
+  z-index: 1;
+}
+
+.-z-1 {
+  z-index: -1;
 }
