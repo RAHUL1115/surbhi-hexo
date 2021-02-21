@@ -1,4 +1,4 @@
-//mobile view
+// * mobile view code
 class swipe {
   swipe(data) {
     this.touchstart = [0, 0];
@@ -55,16 +55,45 @@ class swipe {
   }
 }
 
+// * get screen size code
+// ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
 var w =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
+  document.body.clientWidth ||
+  document.documentElement.clientWidth;
 var h =
-  window.innerHeight ||
-  document.documentElement.clientHeight ||
-  document.body.clientHeight;
+  document.body.clientHeight ||
+  document.documentElement.clientHeight;
 
+// * event listeners
 window.onload = (e) => {
+  navTextAnim(e);
+  navBarAnim(e);
+  heroScroll(e);
+};
+
+window.onscroll = (e) => {
+  navBarAnim(e);
+};
+
+window.onresize = (e) => {
+  updateWidHig(e);
+};
+
+// * functions
+// ! fumction for updating variable w and h on window widthchange
+function updateWidHig(e) {
+  w =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  h =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight;
+}
+
+// ! function for nav bar link-text and link-outline animation
+function navTextAnim(e) {
   document.querySelectorAll(".navtext").forEach((element) => {
     element.addEventListener("mouseover", function (event) {
       element.children[1].classList.remove("w-0");
@@ -75,9 +104,10 @@ window.onload = (e) => {
       element.children[1].classList.remove("w-full");
     });
   });
-};
+}
 
-window.onscroll = (e) => {
+// ! function for change nav bar color animation on scroll
+function navBarAnim(e) {
   if (
     document.body.scrollTop > h * 0.02 ||
     document.documentElement.scrollTop > h * 0.02
@@ -88,4 +118,22 @@ window.onscroll = (e) => {
     document.getElementById("navbar").classList.remove("shadow-lg");
     document.getElementById("navbar").classList.add("bg-opacity-50");
   }
-};
+}
+
+// ! functoin for hero scroll
+function heroScroll(e) {
+  let imageSlider = document.querySelector("#imgcontainer");
+  let total = document.querySelectorAll(".slideimg").length;
+  let counter = 1;
+  setInterval(() => {
+    if (counter > total - 1) {
+      counter = 0;
+    }
+    imageSlider.scrollTo({
+      top: 0,
+      left: w * counter,
+      behavior: "smooth",
+    });
+    counter++;
+  }, 2000);
+}
