@@ -1,74 +1,36 @@
-// * mobile view code
-class swipe {
-  swipe(data) {
-    this.touchstart = [0, 0];
-    this.touchstart = [0, 0];
-    this.elname = document.getElementById(data.elname);
-    this.elname.addEventListener(
-      "touchstart",
-      function (event) {
-        touchstart[0] = event.changedTouches[0].screenX;
-        touchstart[1] = event.changedTouches[0].screenY;
-      },
-      false
-    );
-    this.elname.addEventListener(
-      "touchend",
-      function (event) {
-        touchend[0] = event.changedTouches[0].screenX;
-        touchend[1] = event.changedTouches[0].screenY;
-        handleSwipe();
-      },
-      false
-    );
-    if (data.left) {
-      this.left = data.left;
-    }
-    if (data.right) {
-      this.right = data.right;
-    }
-    if (data.top) {
-      this.top = data.top;
-    }
-    if (data.bottom) {
-      this.bottom = data.bottom;
-    }
-  }
-  handleSwipe() {
-    let xdif = touchstart[0] - touchend[0];
-    let ydif = touchstart[1] - touchend[1];
-    if (xdif ** 2 > ydif ** 2) {
-      if (xdif < -20) {
-        this.right();
-      }
-      if (xdif > 20) {
-        this.left();
-      }
-    } else {
-      if (ydif < -20) {
-        this.top();
-      }
-      if (ydif > 20) {
-        this.bottom();
-      }
-    }
-  }
-}
-
 // * get screen size code
 // ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
-var w =
-  document.body.clientWidth ||
-  document.documentElement.clientWidth;
-var h =
-  document.body.clientHeight ||
-  document.documentElement.clientHeight;
+var w = document.body.clientWidth || document.documentElement.clientWidth;
+var h = document.body.clientHeight || document.documentElement.clientHeight;
+
+// * swiper js
+const swiper = new Swiper(".swiper-container", {
+  // Optional parameters
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  parallax: true,
+  speed: 600,
+  spaceBetween: 10,
+  direction: "horizontal",
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+ScrollOut({
+  threshold : 0.2,
+  once : true,
+});
 
 // * event listeners
 window.onload = (e) => {
-  navTextAnim(e);
   navBarAnim(e);
-  heroScroll(e);
+  heroimgresize(e);
+  navTextAnim(e);
 };
 
 window.onscroll = (e) => {
@@ -77,6 +39,7 @@ window.onscroll = (e) => {
 
 window.onresize = (e) => {
   updateWidHig(e);
+  heroimgresize(e);
 };
 
 // * functions
@@ -94,16 +57,19 @@ function updateWidHig(e) {
 
 // ! function for nav bar link-text and link-outline animation
 function navTextAnim(e) {
-  document.querySelectorAll(".navtext").forEach((element) => {
-    element.addEventListener("mouseover", function (event) {
-      element.children[1].classList.remove("w-0");
-      element.children[1].classList.add("w-full");
-    });
-    element.addEventListener("mouseout", function (event) {
-      element.children[1].classList.add("w-0");
-      element.children[1].classList.remove("w-full");
-    });
-  });
+  try {
+   document.querySelectorAll(".navtext").forEach((element) => {
+     element.addEventListener("mouseover", function (event) {
+       element.children[1].classList.remove("w-0");
+       element.children[1].classList.add("w-full");
+     });
+     element.addEventListener("mouseout", function (event) {
+       element.children[1].classList.add("w-0");
+       element.children[1].classList.remove("w-full");
+     });
+   }); 
+  } catch (error) {
+  }
 }
 
 // ! function for change nav bar color animation on scroll
@@ -120,20 +86,18 @@ function navBarAnim(e) {
   }
 }
 
-// ! functoin for hero scroll
-function heroScroll(e) {
-  let imageSlider = document.querySelector("#imgcontainer");
-  let total = document.querySelectorAll(".slideimg").length;
-  let counter = 1;
-  setInterval(() => {
-    if (counter > total - 1) {
-      counter = 0;
+// ! functoin for hero images resize
+function heroimgresize(e) {
+  let slideImg = document.querySelectorAll(".slideimg");
+  let swiper = document.querySelector('.swiper-wrapper');
+  slideImg.forEach((element) => {
+    if (swiper.clientWidth > swiper.clientHeight) {
+      element.classList.remove("h-full");
+      element.classList.add("w-full");
+    } else {
+      element.classList.remove("w-full");
+      element.classList.add("h-full");
     }
-    imageSlider.scrollTo({
-      top: 0,
-      left: w * counter,
-      behavior: "smooth",
-    });
-    counter++;
-  }, 2000);
+    element.classList.remove("invisible");
+  });
 }

@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Numans&display=swap");
 
-/* scroll bar */
+/* ! scroll bar */
 body::-webkit-scrollbar-track {
   border-radius: 1px;
-  background-color:  rgba(239, 247, 255);
+  background-color: rgba(239, 247, 255);
 }
 
 body::-webkit-scrollbar {
@@ -15,10 +15,10 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color:rgba(33, 65, 81);
+  background-color: rgba(33, 65, 81);
 }
 
-/* main css */
+/* * main css */
 .nunito {
   font-family: "Nunito", sans-serif !important;
 }
@@ -54,13 +54,39 @@ h6 {
 }
 
 .navbar {
-  z-index: 1;
+  z-index: 5;
 }
 
 .-z-1 {
   z-index: -1;
 }
 
-.herocard{
-    bottom: 10%;
+.herocard {
+  bottom: 10%;
+}
+
+/* ! update existing style */
+.swiper-wrapper {
+  height: 100vh !important;
+  width: 100vw !important;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 30px !important;
+    color: rgb(248, 220, 129);
+}
+
+/* ! scroll out js */
+[data-scroll] {
+    transition: all 1s;
+    transition-timing-function: ease-in-out;
+}
+
+[data-scroll="in"] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[data-scroll="out"] {
+    transform: translateY(100%);
+    opacity: 0;
 }

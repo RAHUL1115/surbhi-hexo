@@ -2,13 +2,13 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- seo -->
     <title><%- page.title %></title>
     <meta property="og:title" content="<%- page.title %>" />
-    <meta name="description" content="<%- page.description %>">
+    <meta name="description" content="<%- page.description %>" />
     <meta property="og:description" content="<%- page.description %>" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://webinclusives.com/" />
@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://webinclusives.com/" />
     <link rel="alternate" hreflang="x-default" href=" https://webinclusives.com" />
 
-    <!-- scripts -->
+    <!-- * scripts -->
     <script type="application/ld+json">
       {
         "url": "https://webinclusives.com/",
@@ -29,9 +29,8 @@
       }
     </script>
 
-
-    <% if(page.path == "index.html"){ %>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <% if(page.path=="index.html" || page.path=="" || page.path=="/"){ %>
+    <!-- * Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177464251-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -39,14 +38,19 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
-      gtag('config', 'UA-177464251-1');
+      gtag("js", new Date());
+      gtag("config", "UA-177464251-1");
     </script>
     <% } %>
 
-    <link defer href="/css/tailwind.min.css" rel="stylesheet">
-    <link defer href="/css/index.css" rel="stylesheet">
+    <link defer href="<%- page.prepath %>css/tailwind.min.css" rel="stylesheet" />
+    <link defer href="<%- page.prepath %>css/index.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/83fa0c17b8.js" crossorigin="anonymous"></script>
+
+    <!-- * slider js and css  -->
+    <link rel="stylesheet" href="<%- page.prepath %>css/swiper-bundle.min.css" />
+    <script src="<%- page.prepath %>js/swiper-bundle.min.js"></script>
+
   </head>
 
   <body class="overflow-x-hidden bg-p1">
@@ -54,7 +58,8 @@
     <%- partial('partial/hero') %>
     <%- body %>
     <%- partial('partial/footer') %>
-    <script src="/js/main.js"></script>
+    <script src="<%- page.prepath %>js/scroll-out.min.js"></script>
+    <script src="<%- page.prepath %>js/main.js"></script>
   </body>
 
 </html>
