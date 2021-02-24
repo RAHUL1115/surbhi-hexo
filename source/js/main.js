@@ -101,3 +101,14 @@ function heroimgresize(e) {
     element.classList.remove("invisible");
   });
 }
+
+// ! navbar click
+function navbarclick(e){
+  document.querySelectorAll(".navmobile").forEach(element => {
+    if (element.classList.contains("navopen")){
+      element.classList.remove("navopen");
+    } else{
+      element.classList.add("navopen");
+    }
+  });
+}
