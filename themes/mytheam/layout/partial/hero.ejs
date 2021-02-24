@@ -1,34 +1,34 @@
  <!-- Slider main container -->
  <div class="swiper-container">
    <div class="swiper-wrapper">
-     <div class="swiper-slide space-y-3 flex flex-col items-center justify-center w-full h-full">
+     <div class="swiper-slide space-y-3 w-full h-full">
        <img class="object-cover h-full absolute invisible flex-shrink-0 object-center slideimg" src="<%= page.prepath %>img/hero1.jpg" alt="" />
-       <div class="absolute bg-white p-2 rounded">
-         <p class="invisible text-xl">Slide 1</p>
-         <p class="invisible text-xl">sub text 1</p>
+       <div class="absolute bg-p1 p-2 rounded top-20 left-3 md:left-5 bg-opacity-50">
+         <p class="text-xl md:text-4xl font-bold" data-swiper-parallax="-400">Expert of fitting and flanges</p>
+         <p class="text-xl md:text-2xl" data-swiper-parallax="-800">Contact us now</p>
        </div>
-       <p class="text-xl" data-swiper-parallax="-400">Slide 1</p>
-       <p class="text-xl" data-swiper-parallax="-800">sub text 1</p>
      </div>
      <div class="swiper-slide space-y-3 flex flex-col items-center justify-center w-full h-full">
        <img class="object-cover h-full absolute invisible flex-shrink-0 object-right md:object-center slideimg" src="<%= page.prepath %>img/hero2.jpg" alt="" />
-       <div class="absolute bg-white p-2 rounded">
-         <p class="invisible text-xl">Slide 1</p>
-         <p class="invisible text-xl">sub text 1</p>
+       <div class="absolute bg-p1 p-2 rounded top-20 left-3 md:left-5 bg-opacity-50">
+         <p class="text-xl md:text-4xl font-bold" data-swiper-parallax="-400">Expert in piping solutions</p>
+         <p class="text-xl md:text-2xl" data-swiper-parallax="-800">Contact us now</p>
        </div>
-       <p class="text-xl" data-swiper-parallax="-400">Slide 1</p>
-       <p class="text-xl" data-swiper-parallax="-800">sub text 1</p>
      </div>
      <div class="swiper-slide space-y-3 flex flex-col items-center justify-center w-full h-full">
        <img class="object-cover h-full absolute invisible flex-shrink-0 object-center slideimg" src="<%= page.prepath %>img/hero3.jpg" alt="" />
-       <div class="absolute bg-white p-2 rounded">
-         <p class="invisible text-xl">Slide 1</p>
-         <p class="invisible text-xl">sub text 1</p>
+       <div class="absolute bg-p1 p-2 rounded top-20 left-3 md:left-5 bg-opacity-50">
+         <p class="text-xl md:text-4xl font-bold" data-swiper-parallax="-400">Largest pipes & tubes supplier</p>
+         <p class="text-xl md:text-2xl" data-swiper-parallax="-800">Contact us now</p>
        </div>
-       <p class="text-xl" data-swiper-parallax="-400">Slide 1</p>
-       <p class="text-xl" data-swiper-parallax="-800">sub text 1</p>
      </div>
    </div>
    <div class="swiper-button-prev text-red-500"></div>
    <div class="swiper-button-next text-xs"></div>
+   <div class="absolute bottom-2 w-full z-10">
+     <svg class="w-7 mx-auto animate-bounce" id="mouse" data-name="mouse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.8 30.2">
+       <rect x="0.5" y="0.5" width="16.8" height="29.2" rx="8.4" fill="#ffffff00" stroke="#f8dc81" stroke-miterlimit="20" />
+       <rect x="8.04" y="5.87" width="1.72" height="4.72" rx="0.86" fill="#ffffff00" stroke="#f8dc81" stroke-miterlimit="20" />
+     </svg>
+   </div>
  </div>

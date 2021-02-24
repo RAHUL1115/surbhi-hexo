@@ -1,10 +1,19 @@
 {
-    "website":{
-      "url" : "",
-      "name" : "",
-      "image" : "",
-      "canonical" : "",
-      "alternate" : ""
-    },
-    "data1":"telo"
+  "website": {
+    "url": "",
+    "name": "surbhi metal & alloys",
+    "image": "",
+    "canonical": "",
+    "alternate": ""
+  },
+  "products": [
+    "bars",
+    "buttweld-fittings",
+    "channel",
+    "fasteners",
+    "flanges",
+    "forged-fittings",
+    "pipes",
+    "sheets"
+  ]
 }

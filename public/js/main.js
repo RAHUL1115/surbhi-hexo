@@ -104,10 +104,17 @@ function heroimgresize(e) {
 
 // ! navbar click
 function navbarclick(e){
+  let navsvg = document.querySelector("#navsvg")
   document.querySelectorAll(".navmobile").forEach(element => {
     if (element.classList.contains("navopen")){
+      navsvg.children[0].classList.remove('line1');
+      navsvg.children[1].classList.remove('line2');
+      navsvg.children[2].classList.remove("line3");
       element.classList.remove("navopen");
     } else{
+      navsvg.children[0].classList.add("line1");
+      navsvg.children[1].classList.add("line2");
+      navsvg.children[2].classList.add("line3");
       element.classList.add("navopen");
     }
   });
