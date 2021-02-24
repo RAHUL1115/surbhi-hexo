@@ -53,16 +53,15 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 
-.navbar {
-  z-index: 5;
+.navmobile{
+    transform: scale(0);
+    transition: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(.68,.01,.18,1.42);
 }
 
-.-z-1 {
-  z-index: -1;
-}
-
-.herocard {
-  bottom: 10%;
+.navopen{
+    transform: scale(1) !important;
 }
 
 /* ! update existing style */
