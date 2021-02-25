@@ -78,6 +78,7 @@ h6 {
   transform: scale(0);
 }
 
+
 /* ! update existing style */
 .swiper-wrapper {
   height: 100vh !important;
@@ -91,7 +92,7 @@ h6 {
 
 /* ! scroll out js */
 [data-scroll] {
-  transition: all 1s;
+  transition: all 0.7s;
   transition-timing-function: ease-in-out;
 }
 
@@ -117,20 +118,20 @@ h6 {
 
 [data-scroll="out"] {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateY(50px);
 }
 
 [data-scroll="out"][top] {
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-50px);
 }
 
 [data-scroll="out"][left] {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-50px);
 }
 
 [data-scroll="out"][right] {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(50px);
 }
