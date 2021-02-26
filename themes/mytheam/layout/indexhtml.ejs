@@ -21,14 +21,14 @@
     </article>
   </div>
   <p class="text-center">
-    <a class="text-purple-600 hover:text-p3 transform hover:scale-110 transition-all duration-300" href="/about-us.ejs">Read more...</a>
+    <a class="text-purple-600 hover:text-p3 transform hover:scale-110 transition-all duration-300" href="about-us.html">Read more...</a>
   </p>
 </div>
 
 <div class="container mx-auto px-3 py-5 space-y-4 md:px-16">
   <div class="space-y-8">
     <h2 data-scroll class="text-4xl text-center nunito font-bold">Products We Offer</h2>
-    <div class="space-y-10 sm:grid sm:grid-cols-2 sm:gap-y-6 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3">
       <% site.data.sitedata.products.forEach((element,index) => { %>
       <% if (index>5) { return }%>
       <a href="">
@@ -41,7 +41,7 @@
     </div>
   </div>
   <p class="text-center">
-    <a class="text-purple-600 hover:text-black transition-all duration-300" href="">See more...</a>
+    <a class="text-purple-600 hover:text-black transition-all duration-300" href="products.html">See more...</a>
   </p>
 </div>
 

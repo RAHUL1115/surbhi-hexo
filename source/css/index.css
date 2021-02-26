@@ -33,11 +33,11 @@ body::-webkit-scrollbar-thumb {
 
 * {
   font-family: "Numans", sans-serif;
-  -moz-user-select: none;
+  /* -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
-  user-select: none;
+  user-select: none; */
 }
 
 a {
