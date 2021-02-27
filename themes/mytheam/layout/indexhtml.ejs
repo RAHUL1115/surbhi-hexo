@@ -31,10 +31,10 @@
     <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3">
       <% site.data.sitedata.products.forEach((element,index) => { %>
       <% if (index>5) { return }%>
-      <a href="">
+      <a href="products/<%-element[2] %>">
         <div class="mx-3 h-72 border-black border hover:border-transparent transform transition-all duration-300 rounded-xl overflow-hidden hover:scale-105">
-          <img class="object-center w-full h-full" src="img/pipe.png">
-          <p class="absolute bottom-0 w-full bg-p4 text-p1 text-center"><%- element %></p>
+          <img class="object-center w-full h-full" src="img/<%-element[1] %>">
+          <p class="absolute bottom-0 w-full bg-p4 text-p1 text-center"><%- element[0] %></p>
         </div>
       </a>
       <% }) %>
@@ -95,7 +95,6 @@
 
 <div class="my-5">
   <div class="grid grid-cols-1 gap-y-2 gap-x-2 sm:grid-cols-2 lg:grid-cols-3">
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/sheets2.jpg">
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/bar.jpg">
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/sheets.jpg">
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/pipe.jpg">
@@ -103,6 +102,6 @@
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/forged-fitting.jpg">
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/channel.jpg">
     <img class="object-center object-cover w-full h-72 img-scroll" src="img/buttweld-fitting.jpg">
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/fasteners.jpg">
+    <img class="object-center object-cover w-full h-72 img-scroll" src="img/fastener.jpg">
   </div>
 </div>

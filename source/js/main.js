@@ -1,3 +1,10 @@
+// * customError
+class CustomError extends Error {
+  constructor(message) {
+    super(message);
+  }
+}
+
 // * get screen size code
 // ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
 var w = document.body.clientWidth || document.documentElement.clientWidth;
@@ -198,6 +205,10 @@ function navbarclick(e) {
 function aboutscroll(e) {
   try {
     let el = document.querySelector(".items");
+    // ! custorm error
+    if(!el){
+      throw new CustomError("element not found for function");
+    }
     let elcount = el.childElementCount;
     let sw = el.scrollWidth;
     el.innerHTML += el.innerHTML;
@@ -212,25 +223,29 @@ function aboutscroll(e) {
       }
     );
   } catch (error) {
-    console.log(error);
+    console.warn(error.message);
   }
 }
 
 // ! swiper js
-function swiper(e){
-  new Swiper(".swiper-container", {
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    parallax: true,
-    speed: 600,
-    spaceBetween: 10,
-    direction: "horizontal",
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+function swiper(e) {
+  try{
+    new Swiper(".swiper-container", {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      parallax: true,
+      speed: 600,
+      spaceBetween: 10,
+      direction: "horizontal",
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }catch(error){
+
+  }
 }
