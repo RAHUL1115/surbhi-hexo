@@ -33,11 +33,6 @@ body::-webkit-scrollbar-thumb {
 
 * {
   font-family: "Numans", sans-serif;
-  /* -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none; */
 }
 
 a {
@@ -78,6 +73,13 @@ h6 {
   transform: scale(0);
 }
 
+.img-scroll{
+  background-color: lightgray;
+  will-change: transform;
+  opacity: 1;
+  opacity: calc(var(--visible-y) * var(--visible-y));
+  transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
+}
 
 /* ! update existing style */
 .swiper-wrapper {
@@ -91,47 +93,33 @@ h6 {
 }
 
 /* ! scroll out js */
-[data-scroll] {
+.data-scroll{
   transition: all 0.7s;
   transition-timing-function: ease-in-out;
 }
 
-[data-scroll="in"] {
+.data-scroll-in{
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0px,0px);
 }
 
-[data-scroll="in"][left] {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-[data-scroll="in"][right] {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-[data-scroll="in"][top] {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-[data-scroll="out"] {
+.data-scroll-b{
   opacity: 0;
   transform: translateY(50px);
 }
 
-[data-scroll="out"][top] {
+.data-scroll-t{
   opacity: 0;
   transform: translateY(-50px);
 }
 
-[data-scroll="out"][left] {
+.data-scroll-l{
   opacity: 0;
   transform: translateX(-50px);
 }
 
-[data-scroll="out"][right] {
+.data-scroll-r{ 
   opacity: 0;
   transform: translateX(50px);
 }
+

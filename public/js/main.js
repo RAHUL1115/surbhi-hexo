@@ -4,32 +4,22 @@ var w = document.body.clientWidth || document.documentElement.clientWidth;
 var h = document.body.clientHeight || document.documentElement.clientHeight;
 var navopen = false;
 
-// * swiper js
-const swiper = new Swiper(".swiper-container", {
-  // Optional parameters
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
-  parallax: true,
-  speed: 600,
-  spaceBetween: 10,
-  direction: "horizontal",
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+// * event listeners
+//! on document only load
+document.addEventListener("DOMContentLoaded", (e) => {
+  heroimgresize(e);
+  swiper(e);
+  scrollout(e);
 });
 
-// * event listeners
+// ! on full document load
 window.onload = (e) => {
   navBarAnim(e);
-  heroimgresize(e);
   navTextAnim(e);
-  scrollout(e);
+  aboutscroll(e);
 };
 
+// ! on windw scroll
 window.onscroll = (e) => {
   navBarAnim(e);
   // ! close navbar if open on mobile view
@@ -38,6 +28,7 @@ window.onscroll = (e) => {
   }
 };
 
+// ! on winodw resize
 window.onresize = (e) => {
   updateWidHig(e);
   heroimgresize(e);
@@ -61,10 +52,16 @@ function updateWidHig(e) {
 // !function for handling all scroll out js thing
 function scrollout(e) {
   try {
+    // * gallery
     ScrollOut({
-      threshold: 0.3,
-      once: true,
+      targets: ".img-scroll",
+      threshhold: 0.5,
+      cssProps: {
+        visibleY: true,
+      },
     });
+
+    // * quality
     ScrollOut({
       targets: ".scroll-child",
       threshold: 0.4,
@@ -96,6 +93,29 @@ function scrollout(e) {
           element.style.transform = "translateY(50px)";
         }
         return;
+      },
+    });
+
+    // * general
+    ScrollOut({
+      target: ".data-scroll",
+      threshold: 0.3,
+      once: true,
+      onShown: function (el) {
+        el.style.opacity = 1;
+        el.transform = "translate(0px,0px)";
+      },
+      onHidden: function (el) {
+        el.style.opacity = 0;
+        if (el.classList.contains("top")) {
+          el.transform = "translateY(-50px)";
+        } else if (el.classList.contains("left")) {
+          el.transform = "translateX(-50px)";
+        } else if (el.classList.contains("right")) {
+          el.transform = "translateX(50px)";
+        } else {
+          el.transform = "translateY(50px)";
+        }
       },
     });
   } catch (error) {}
@@ -146,7 +166,6 @@ function heroimgresize(e) {
         element.classList.remove("w-full");
         element.classList.add("h-full");
       }
-      element.classList.remove("invisible");
     });
   } catch (error) {
     console.log("hero image resize");
@@ -154,7 +173,7 @@ function heroimgresize(e) {
 }
 
 // ! navbar click
-function navbarclick(e, state) {
+function navbarclick(e) {
   try {
     let navsvg = document.querySelector("#navsvg");
     document.querySelectorAll(".navmobile").forEach((element) => {
@@ -173,4 +192,45 @@ function navbarclick(e, state) {
       }
     });
   } catch (error) {}
+}
+
+// ! about scroll (only for about page)
+function aboutscroll(e) {
+  try {
+    let el = document.querySelector(".items");
+    let elcount = el.childElementCount;
+    let sw = el.scrollWidth;
+    el.innerHTML += el.innerHTML;
+    el.animate(
+      [
+        { Transform: "translateX(0px)" },
+        { transform: "translateX(-" + sw + "px)" },
+      ],
+      {
+        duration: elcount * 2000 + w,
+        iterations: Infinity,
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ! swiper js
+function swiper(e){
+  new Swiper(".swiper-container", {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    parallax: true,
+    speed: 600,
+    spaceBetween: 10,
+    direction: "horizontal",
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 }
