@@ -1,2 +1,8 @@
-<%- partial('partial/productnav') %>
-<%- page.content %>
+<div class="md:flex">
+  <div class="md:w-1/4 md:p-4">
+    <%- partial('partial/productnav') %>
+  </div>
+  <div class="md:w-3/4">
+    <%- page.content %>
+  </div>
+</div>

@@ -10,13 +10,12 @@ class swipe {
   constructor(data) {
     let touchstart = [0, 0];
     let touchend = [0, 0];
-    let translateX = "";
-    let translateY = "";
+    let translateX = 0;
     document.querySelectorAll(data.el).forEach((element) => {
       element.addEventListener(
         "touchstart",
         function (event) {
-          settranslate(element);
+          settranslateX(element);
           touchstart = [
             event.changedTouches[0].screenX,
             event.changedTouches[0].screenY,
@@ -38,36 +37,31 @@ class swipe {
       element.addEventListener(
         "touchend",
         function (event) {
-          settranslate(element);
+          settranslateX(element);
         },
         false
       );
     });
     function handleSwipe(element) {
       let xdif = touchend[0] - touchstart[0];
-      element.style.transform = "translateX("+(translateX + xdif) +"px)";
+      let tx = translateX + xdif;
+      if (tx > 0) {
+        tx = 0;
+      }
+      if (tx < parseInt(-element.scrollWidth + element.clientWidth)) {
+        tx = parseInt(-element.scrollWidth + element.clientWidth);
+      }
+      element.style.transform = "translateX(" + tx + "px)";
     }
-    function getTranslateXValue(translateString){
-      var n = translateString.indexOf("(");
-      var n1 = translateString.indexOf(",");
-
-      var res = parseInt(translateString.slice(n + 1, n1 - 2));
-
-      return res;
-    }
-    function getTranslateYValue(translateString){
-      var n = translateString.indexOf(",");
-      var n1 = translateString.indexOf(")");
-
-      var res = parseInt(translateString.slice(n + 1, n1 - 1));
-      return res;
-    }
-    function settranslate(element){
-      translateX = getTranslateXValue(element.style.transform) || 0;
-      translateY = getTranslateYValue(element.style.transform) || 0;
+    function settranslateX(element) {
+      let translateString = element.style.transform;
+      let n = translateString.indexOf("(");
+      let n1 = translateString.indexOf(",");
+      translateX = parseInt(translateString.slice(n + 1, n1 - 2)) || 0;
     }
   }
 }
+
 // * get screen size code
 // ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
 var w = document.body.clientWidth || document.documentElement.clientWidth;
@@ -87,9 +81,6 @@ window.onload = (e) => {
   navBarAnim(e);
   navTextAnim(e);
   aboutscroll(e);
-  new swipe({
-    el: ".test",
-  });
 };
 
 // ! on windw scroll
@@ -267,29 +258,32 @@ function navbarclick(e) {
   } catch (error) {}
 }
 
-// ! about scroll (only for about page)
+// ! news scroll (only for about and all product page page)
 function aboutscroll(e) {
   try {
-    let el = document.querySelector(".items");
-    // ! custorm error
-    if (!el) {
-      throw new CustomError("element not found for abotutscroll");
-    }
-    let elcount = el.childElementCount;
-    let sw = el.scrollWidth;
-    el.innerHTML += el.innerHTML;
-    el.animate(
-      [
-        { Transform: "translateX(0px)" },
-        { transform: "translateX(-" + sw + "px)" },
-      ],
-      {
-        duration: elcount * 2000 + w,
-        iterations: Infinity,
+    document.querySelectorAll(".items").forEach((el) => {
+      if (el.classList.contains("auto")) {
+        let elcount = el.childElementCount;
+        let sw = el.scrollWidth;
+        el.innerHTML += el.innerHTML;
+        el.animate(
+          [
+            { Transform: "translateX(0px)" },
+            { transform: "translateX(-" + sw + "px)" },
+          ],
+          {
+            duration: elcount * 2000 + w,
+            iterations: Infinity,
+          }
+        );
+      } else {
+        new swipe({
+          el: ".navmenu",
+        });
       }
-    );
+    });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 }
 
