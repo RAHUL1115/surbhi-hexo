@@ -5,6 +5,69 @@ class CustomError extends Error {
   }
 }
 
+// * swipe class
+class swipe {
+  constructor(data) {
+    let touchstart = [0, 0];
+    let touchend = [0, 0];
+    let translateX = "";
+    let translateY = "";
+    document.querySelectorAll(data.el).forEach((element) => {
+      element.addEventListener(
+        "touchstart",
+        function (event) {
+          settranslate(element);
+          touchstart = [
+            event.changedTouches[0].screenX,
+            event.changedTouches[0].screenY,
+          ];
+        },
+        false
+      );
+      element.addEventListener(
+        "touchmove",
+        function (event) {
+          touchend = [
+            event.changedTouches[0].screenX,
+            event.changedTouches[0].screenY,
+          ];
+          handleSwipe(element);
+        },
+        false
+      );
+      element.addEventListener(
+        "touchend",
+        function (event) {
+          settranslate(element);
+        },
+        false
+      );
+    });
+    function handleSwipe(element) {
+      let xdif = touchend[0] - touchstart[0];
+      element.style.transform = "translateX("+(translateX + xdif) +"px)";
+    }
+    function getTranslateXValue(translateString){
+      var n = translateString.indexOf("(");
+      var n1 = translateString.indexOf(",");
+
+      var res = parseInt(translateString.slice(n + 1, n1 - 2));
+
+      return res;
+    }
+    function getTranslateYValue(translateString){
+      var n = translateString.indexOf(",");
+      var n1 = translateString.indexOf(")");
+
+      var res = parseInt(translateString.slice(n + 1, n1 - 1));
+      return res;
+    }
+    function settranslate(element){
+      translateX = getTranslateXValue(element.style.transform) || 0;
+      translateY = getTranslateYValue(element.style.transform) || 0;
+    }
+  }
+}
 // * get screen size code
 // ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
 var w = document.body.clientWidth || document.documentElement.clientWidth;
@@ -24,6 +87,9 @@ window.onload = (e) => {
   navBarAnim(e);
   navTextAnim(e);
   aboutscroll(e);
+  new swipe({
+    el: ".test",
+  });
 };
 
 // ! on windw scroll
@@ -105,23 +171,23 @@ function scrollout(e) {
 
     // * general
     ScrollOut({
-      target: ".data-scroll",
+      targets: ".data-scroll",
       threshold: 0.3,
       once: true,
       onShown: function (el) {
         el.style.opacity = 1;
-        el.transform = "translate(0px,0px)";
+        el.style.transform = "translate(0px,0px)";
       },
       onHidden: function (el) {
         el.style.opacity = 0;
         if (el.classList.contains("top")) {
-          el.transform = "translateY(-50px)";
+          el.style.transform = "translateY(-50px)";
         } else if (el.classList.contains("left")) {
-          el.transform = "translateX(-50px)";
+          el.style.transform = "translateX(-50px)";
         } else if (el.classList.contains("right")) {
-          el.transform = "translateX(50px)";
+          el.style.transform = "translateX(50px)";
         } else {
-          el.transform = "translateY(50px)";
+          el.style.transform = "translateY(50px)";
         }
       },
     });
@@ -206,8 +272,8 @@ function aboutscroll(e) {
   try {
     let el = document.querySelector(".items");
     // ! custorm error
-    if(!el){
-      throw new CustomError("element not found for function");
+    if (!el) {
+      throw new CustomError("element not found for abotutscroll");
     }
     let elcount = el.childElementCount;
     let sw = el.scrollWidth;
@@ -223,13 +289,13 @@ function aboutscroll(e) {
       }
     );
   } catch (error) {
-    console.warn(error.message);
+    console.log(error.message);
   }
 }
 
 // ! swiper js
 function swiper(e) {
-  try{
+  try {
     new Swiper(".swiper-container", {
       autoplay: {
         delay: 2000,
@@ -245,7 +311,5 @@ function swiper(e) {
         prevEl: ".swiper-button-prev",
       },
     });
-  }catch(error){
-
-  }
+  } catch (error) {}
 }

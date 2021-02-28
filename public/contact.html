@@ -41,7 +41,7 @@
   <meta name="generator" content="Hexo 5.3.0"></head>
 
   <body class="overflow-x-hidden bg-p1">
-    <header id="navbar" class="fixed z-10 w-full bg-p4 bg-opacity-50 rounded-b lg:px-16 lg:py-2 py-2 px-4 transition-all duration-500 ease-in-out">
+    <header id="navbar" class="fixed z-20 w-full bg-p4 bg-opacity-50 rounded-b lg:px-16 lg:py-2 py-2 px-4 transition-all duration-500 ease-in-out">
   <div class="container mx-auto flex items-center flex-row">
     <div>
       <a href="index.html" class="flex items-center">
@@ -75,7 +75,7 @@
     </nav>
     <div class="ml-auto lg:space-x-10 block lg:hidden">
       <div onclick="navbarclick(event)">
-        <svg id="navsvg" value="true" id="box" viewBox="0 0 100 80" width="1.95rem" height="1.95rem" fill="white">
+        <svg id="navsvg" class="transition duration-200 ease-in-out" value="true" id="box" viewBox="0 0 100 80" width="1.95rem" height="1.95rem" fill="white">
           <rect id="line1" rx="7" ry="7" y="0" x="0" width="100" height="10"></rect>
           <rect id="line2" rx="7" ry="7" y="30" x="20" width="80" height="10"></rect>
           <rect id="line3" rx="7" ry="7" y="60" x="40" width="60" height="10"></rect>
@@ -145,32 +145,26 @@
           <div class="bg-p4 px-4 py-6 rounded">
             <p class="text-2xl font-bold text-p1">Send Your Enquiry</p>
             <div class="bg-white mt-4 rounded">
-              <input id="name" placeholder="Your Name" type="text"
-                class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
+              <input id="name" placeholder="Your Name" type="text" class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
             </div>
             <div class="bg-white mt-6 rounded">
-              <input id="email" placeholder="Your Email" type="text"
-                class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
+              <input id="email" placeholder="Your Email" type="text" class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
             </div>
             <div class="bg-white mt-6 rounded">
-              <input id="phone" placeholder="Phone" type="text"
-                class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
+              <input id="phone" placeholder="Phone" type="text" class="w-full py-2 px-4 bg-white rounded outline-none text-xl">
             </div>
             <div class="bg-white mt-6 rounded">
-              <textarea id="message" placeholder="Your Message..." rows="4"
-                class="w-full py-2 px-4 bg-white rounded outline-none text-xl"></textarea>
+              <textarea id="message" placeholder="Your Message..." rows="4" class="w-full py-2 px-4 bg-white rounded outline-none text-xl"></textarea>
             </div>
             <div class="bg-white mt-6 rounded">
-              <button click="sendmail"
-                class="w-full py-2 px-4 bg-p2 text-black bg-opacity-90 rounded outline-none text-xl">Send<button>
+              <button click="sendmail" class="w-full py-2 px-4 bg-p2 text-black bg-opacity-90 rounded outline-none text-xl">Send<button>
             </div>
             <p id="message" class="text-p1 text-center mt-5">
               <p>
           </div>
         </div>
         <div class="lg:flex-1">
-          <iframe class="w-full bg-white rounded overflow-hidden h-60 md:h-full"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5336.464642777068!2d72.82740409044051!3d18.955708853925632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8c31d0ae88db519!2sSurbhi%20Metal%20%26%20Alloys!5e0!3m2!1sen!2sin!4v1613632236190!5m2!1sen!2sin"></iframe>
+          <iframe class="w-full bg-white rounded overflow-hidden h-60 md:h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5336.464642777068!2d72.82740409044051!3d18.955708853925632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8c31d0ae88db519!2sSurbhi%20Metal%20%26%20Alloys!5e0!3m2!1sen!2sin!4v1613632236190!5m2!1sen!2sin"></iframe>
         </div>
       </div>
       <div class="overflow-hidden p-4 space-y-4">
@@ -179,7 +173,7 @@
             <p class="text-xl text-center rounded-b">Office Address</p>
           </div>
           <div class="p-4">
-            <p>No. 17, 94/100 Jamnadas Building, Bhandari street, 1th Kumbharwada, Mumbai - 400004</p>
+            <address>No. 17, 94/100 Jamnadas Building, Bhandari street, 1th Kumbharwada, Mumbai - 400004</address>
           </div>
         </div>
         <div class="flex-1 bg-white rounded-lg">
@@ -187,9 +181,11 @@
             <p class="text-xl text-center rounded-b">Contact Details</p>
           </div>
           <div class="p-4">
-            <p><i class="fas fa-phone-alt"></i> +91 22 6654 1007</p>
-            <p><i class="fas fa-mobile-alt"></i> +91 9819211601 (Mr. Champalal Mali)</p>
-            <p><i class="far fa-envelope-open"></i> surbhimetalalloys@gmail.com</p>
+            <address>
+              <i class="fas fa-phone-alt"></i> +91 22 6654 1007<br>
+              <i class=" fas fa-mobile-alt"></i> +91 9819211601 (Mr. Champalal Mali)<br>
+              <i class="far fa-envelope-open"></i> surbhimetalalloys@gmail.com<br>
+            </address>
           </div>
         </div>
       </div>

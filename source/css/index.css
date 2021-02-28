@@ -59,10 +59,6 @@ h6 {
   transform: scale(1) !important;
 }
 
-#navsvg > * {
-  transition: all 200ms ease-in-out;
-}
-
 .line1 {
   transform: translate(25px, -10px) rotate(45deg);
 }
@@ -71,14 +67,6 @@ h6 {
 }
 .line3 {
   transform: scale(0);
-}
-
-.img-scroll{
-  background-color: lightgray;
-  will-change: transform;
-  opacity: 1;
-  opacity: calc(var(--visible-y) * var(--visible-y));
-  transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
 }
 
 /* ! update existing style */
@@ -93,33 +81,15 @@ h6 {
 }
 
 /* ! scroll out js */
+.img-scroll{
+  background-color: lightgray;
+  will-change: transform;
+  opacity: 1;
+  opacity: calc(var(--visible-y) * var(--visible-y));
+  transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
+}
+
 .data-scroll{
-  transition: all 0.7s;
+  transition: all 1s;
   transition-timing-function: ease-in-out;
 }
-
-.data-scroll-in{
-  opacity: 1;
-  transform: translate(0px,0px);
-}
-
-.data-scroll-b{
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.data-scroll-t{
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
-.data-scroll-l{
-  opacity: 0;
-  transform: translateX(-50px);
-}
-
-.data-scroll-r{ 
-  opacity: 0;
-  transform: translateX(50px);
-}
-
