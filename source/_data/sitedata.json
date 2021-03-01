@@ -7,13 +7,23 @@
     "alternate": ""
   },
   "products": [
-    ["Bars","bar.jpg","bars.html"],
-    ["Buttweld fittings","buttweld-fitting.jpg","buttweld-fittings.html"],
-    ["Channel","channel.jpg","channel.html"],
-    ["Fasteners","fastener.jpg","fasteners.html"],
-    ["Flanges","flange.jpg","flanges.html"],
-    ["Forged fittings","forged-fitting.jpg","forged-fittings.html"],
-    ["Pipes","pipe.jpg","pipes.html"],
-    ["Sheets","sheet.jpg","sheets.html"]
+    ["Bars", "bar.jpg", "bars.html"],
+    ["Buttweld fittings", "buttweld-fitting.jpg", "buttweld-fittings.html"],
+    ["Channel", "channel.jpg", "channel.html"],
+    ["Fasteners", "fastener.jpg", "fasteners.html"],
+    ["Flanges", "flange.jpg", "flanges.html"],
+    ["Forged fittings", "forged-fitting.jpg", "forged-fittings.html"],
+    ["Pipes", "pipe.jpg", "pipes.html"],
+    ["Sheets", "sheet.jpg", "sheets.html"]
+  ],
+  "images": [
+    "bar.jpg",
+    "buttweld-fitting.jpg",
+    "channel.jpg",
+    "fastener.jpg",
+    "flange.jpg",
+    "forged-fitting.jpg",
+    "pipe.jpg",
+    "sheet.jpg"
   ]
 }

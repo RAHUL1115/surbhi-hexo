@@ -5,63 +5,6 @@ class CustomError extends Error {
   }
 }
 
-// * swipe class
-class swipe {
-  constructor(data) {
-    let touchstart = [0, 0];
-    let touchend = [0, 0];
-    let translateX = 0;
-    document.querySelectorAll(data.el).forEach((element) => {
-      element.addEventListener(
-        "touchstart",
-        function (event) {
-          settranslateX(element);
-          touchstart = [
-            event.changedTouches[0].screenX,
-            event.changedTouches[0].screenY,
-          ];
-        },
-        false
-      );
-      element.addEventListener(
-        "touchmove",
-        function (event) {
-          touchend = [
-            event.changedTouches[0].screenX,
-            event.changedTouches[0].screenY,
-          ];
-          handleSwipe(element);
-        },
-        false
-      );
-      element.addEventListener(
-        "touchend",
-        function (event) {
-          settranslateX(element);
-        },
-        false
-      );
-    });
-    function handleSwipe(element) {
-      let xdif = touchend[0] - touchstart[0];
-      let tx = translateX + xdif;
-      if (tx > 0) {
-        tx = 0;
-      }
-      if (tx < parseInt(-element.scrollWidth + element.clientWidth)) {
-        tx = parseInt(-element.scrollWidth + element.clientWidth);
-      }
-      element.style.transform = "translateX(" + tx + "px)";
-    }
-    function settranslateX(element) {
-      let translateString = element.style.transform;
-      let n = translateString.indexOf("(");
-      let n1 = translateString.indexOf(",");
-      translateX = parseInt(translateString.slice(n + 1, n1 - 2)) || 0;
-    }
-  }
-}
-
 // * get screen size code
 // ! removed window.inner[Width/Height] (coz it takes all the higth including scroll bar height/width)
 var w = document.body.clientWidth || document.documentElement.clientWidth;
@@ -262,25 +205,19 @@ function navbarclick(e) {
 function aboutscroll(e) {
   try {
     document.querySelectorAll(".items").forEach((el) => {
-      if (el.classList.contains("auto")) {
-        let elcount = el.childElementCount;
-        let sw = el.scrollWidth;
-        el.innerHTML += el.innerHTML;
-        el.animate(
-          [
-            { Transform: "translateX(0px)" },
-            { transform: "translateX(-" + sw + "px)" },
-          ],
-          {
-            duration: elcount * 2000 + w,
-            iterations: Infinity,
-          }
-        );
-      } else {
-        new swipe({
-          el: ".navmenu",
-        });
-      }
+      let elcount = el.childElementCount;
+      let sw = el.scrollWidth;
+      el.innerHTML += el.innerHTML;
+      el.animate(
+        [
+          { Transform: "translateX(0px)" },
+          { transform: "translateX(-" + sw + "px)" },
+        ],
+        {
+          duration: elcount * 2000 + w,
+          iterations: Infinity,
+        }
+      );
     });
   } catch (error) {
     console.log(error);

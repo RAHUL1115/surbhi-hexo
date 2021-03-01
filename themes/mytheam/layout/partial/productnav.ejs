@@ -1,20 +1,22 @@
-<div class="overflow-hidden bg-p1 block md:hidden relative pt-5 select-none">
-  <div class="absolute h-full w-1/12 bg-gradient-to-r from-p1 z-10 to-transparent left-0"></div>
-  <div class="absolute h-full w-1/12 bg-gradient-to-l from-p1 z-10 to-transparent right-0"></div>
-  <div class="flex flex-row items navmenu">
-    <% site.data.sitedata.products.forEach(element => { %>
-    <div class="flex-shrink-0 px-2">
-      <a href="<%- element[2] %>">
-        <div class="bg-white rounded-3xl shadow font-semibold p-3">
-          <%- element[0] %>
-        </div>
-      </a>
+<div class="relative">
+  <div class="overflow-auto bg-p1 block md:hidden">
+    <div class="absolute h-full w-1/12 bg-gradient-to-r from-p1 z-10 to-transparent left-0"></div>
+    <div class="absolute h-full w-1/12 bg-gradient-to-l from-p1 z-10 to-transparent right-0"></div>
+    <div class="flex flex-row navmenu">
+      <% site.data.sitedata.products.forEach(element => { %>
+      <div class="flex-shrink-0 p-2">
+        <a href="<%- element[2] %>">
+          <div class="bg-white rounded-3xl shadow font-semibold p-3">
+            <%- element[0] %>
+          </div>
+        </a>
+      </div>
+      <% }) %>
     </div>
-    <% }) %>
   </div>
 </div>
 <div class="hidden md:block">
-  <div class="overflow-hidde bg-white rounded-lg">
+  <div class="overflow-hidden bg-white rounded-lg">
     <% site.data.sitedata.products.forEach(element => { %>
     <div class="px-2">
       <a href="<%- element[2] %>">
