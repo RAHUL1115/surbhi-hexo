@@ -66,12 +66,16 @@
         <a href="products.html">Products</a>
         <hr class="w-0 mx-auto transition-all duration-500 text-red-500 bg-red-500" />
       </div>
+      <div class="navtext transform inline-block transition-all duration-300 hover:scale-125 hover:text-p2 text-white">
+        <a href="gallery.html">Gallery</a>
+        <hr class="w-0 mx-auto transition-all duration-500 text-red-500 bg-red-500" />
+      </div>
       <div class="navtext hidden transform transition-all duration-300 hover:scale-125 hover:text-p2 text-white">
         <a href="blogs.html">Blog</a>
         <hr class="w-0 mx-auto transition-all duration-500 text-red-500 bg-red-500" />
       </div>
       <div class="navtext transform inline-block transition-all duration-300 hover:scale-125 hover:text-p2 text-white">
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact Us</a>
         <hr class="w-0 mx-auto transition-all duration-500 text-red-500 bg-red-500" />
       </div>
     </nav>
@@ -89,21 +93,26 @@
           <i class="fas fa-home text-2xl text-p1"></i>
         </a>
         <a href="about-us.html" class="relative navmobile rounded-full shadow-lg bg-p4 p-2 flex justify-center items-center w-auto space-x-3 h-12">
-          <p class="text-p2 mt-0.5">About</p>
+          <p class="text-p2 mt-0.5">About Us</p>
           <i class="fas relative fa-info text-2xl text-p1"></i>
         </a>
         <a href="products.html" class="relative navmobile rounded-full shadow-lg bg-p4 p-2 flex justify-center items-center w-auto space-x-3 h-12">
           <p class="text-p2">Products</p>
           <i class="fas relative fa-cubes text-2xl text-p1"></i>
         </a>
+        <a href="gallery.html" class="relative navmobile rounded-full shadow-lg bg-p4 p-2 flex justify-center items-center w-auto space-x-3 h-12">
+          <p class="text-p2 mt-0.5">gallery</p>
+          <i class="far fa-images relative text-2xl text-p1"></i>
+        </a>
         <a href="contact.html" class="relative navmobile rounded-full shadow-lg bg-p4 p-2 flex justify-center items-center w-auto space-x-3 h-12">
-          <p class="text-p2">Contact</p>
+          <p class="text-p2">Contact Us</p>
           <i class="far fa-user-circle text-2xl text-p1"></i>
         </a>
       </nav>
     </div>
   </div>
 </header>
+    
      <!-- Slider main container -->
  <div class="swiper-container">
    <div class="swiper-wrapper">
@@ -137,6 +146,7 @@
      </svg>
    </div>
  </div>
+    
     <div class="container mx-auto px-3 py-5 space-y-4 md:px-16">
   <div class="space-y-8">
     <h2 class="text-4xl text-center data-scroll nunito font-bold">About Us</h2>
@@ -147,12 +157,8 @@
         Mumbai. Surbhi Metal and Alloys is a team of experienced industry experts
         who deal in manufacturing, supplying and trading of ferrous and non
         ferrous metals.
-        <br />
-        <br />
         We manufacture and supply a variety of ferrous and non ferrous metals such
         as iron, stainless steel, aluminium, copper, brass, etc.
-        <br />
-        <br />
         We manufacture and trade various products such as <a class="text-blue-500" href="products/pipe.html">pipes</a>,
         <a class="text-blue-500" href="products/sheets.html">sheets</a>, <a class="text-blue-500" href="products/bars.html">bars</a>,
         <a class="text-blue-500" href="products/flanges.html">flanges</a>, <a class="text-blue-500" href="products/fastener.html">fasteners</a>,
@@ -275,38 +281,47 @@
   </div>
 </div>
 
-<div class="my-5 space-y-3">
-  <div class="grid grid-cols-1 gap-y-2 gap-x-2 sm:grid-cols-2 lg:grid-cols-3">
+<div class="container mx-auto px-3 py-5 space-y-4">
+  <h2 class="text-4xl text-center data-scroll nunito font-bold">Gallery</h2>
+  <div class="grid grid-cols-1 gap-y-2 gap-x-2 sm:grid-cols-4 lg:grid-cols-4">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/bar1.jpg">
+    <img class="object-center border border-black rounded object-cover w-full h-72 img-scroll" src="img/bar1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/buttweld-fitting1.jpg">
+    
+    <img class="object-center border border-black rounded object-cover w-full h-72 img-scroll" src="img/buttweld-fitting1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/channel1.jpg">
+    
+    <img class="object-center border border-black rounded object-cover w-full h-72 img-scroll" src="img/channel1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/fastener1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/flange1.jpg">
+    <div class="relative h-72 border group rounded border-black">
+      <a href="gallery.html">
+        <img style=" filter: blur(2px);" class="object-center rounded object-cover w-full h-full img-scroll" src="img/fastener1.jpg">
+        <p class="absolute z-10 top-1/2 text-center text-xl group-hover:text-blue-600 w-full">
+          View more
+        </p>
+      </a>
+    </div>
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/forged-fitting1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/pipe1.jpg">
     
     
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/sheet1.jpg">
+    
+    
+    
     
   </div>
-  <p class="text-center">
-    <a class="text-purple-600 hover:text-black transition-all duration-300" href="gallery.html">See more...</a>
-  </p>
 </div>
+<script>
+  let hero = true;
+</Script>
     <footer class="bg-p2 py-2 px-4 mt-5 md:px-16 md:py-2">
   <div class="container mx-auto w-full flex flex-col space-y-5 items-center md:space-y-0 md:flex-row">
     <p class="nunito flex-1 text-black text-sm font-bold text-center md:text-left md:text-base">

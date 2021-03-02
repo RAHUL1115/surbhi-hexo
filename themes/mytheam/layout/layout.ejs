@@ -44,7 +44,11 @@
 
   <body class="overflow-x-hidden bg-p1">
     <%- partial('partial/navbar') %>
+    <% if(!page.hero) { %>
+    <%- partial('partial/hero2') %>
+    <% } else { %>
     <%- partial('partial/hero') %>
+    <% } %>
     <%- body %>
     <%- partial('partial/footer') %>
     <!-- ! scripts -->

@@ -14,54 +14,28 @@ trading of various ferrous and non-ferrous metals applicable in many core indust
     <h2 class="text-4xl text-center scroll font-bold">About Us</h2>
     <article class="space-y-8">
       <div class="overflow-hidden bg-p1 relative">
-        <div class="absolute h-full w-1/12 bg-gradient-to-r from-p1 z-10 to-transparent left-0"></div>
-        <div class="absolute h-full w-1/12 bg-gradient-to-l from-p1 z-10 to-transparent right-0"></div>
+        <div style="width: 5%;" class="absolute h-full bg-gradient-to-r from-p1 z-10 to-transparent left-0"></div>
+        <div style="width: 5%;" class="absolute h-full bg-gradient-to-l from-p1 z-10 to-transparent right-0"></div>
         <div class="flex flex-row items">
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Quality Products
+          <% let hightlights = 
+          [
+            "Quality Products",
+            "Ready Stock","Quick Supply",
+            "Competitive Rates",
+            "Lab Tested Reports",
+            "Quality Certificates",
+            "Effective Packaging",
+            "Third Party Inspection",
+            " Experienced Qualified Team"
+          ] 
+          %>
+          <% hightlights.forEach(element => { %>
+          <div class="flex-shrink-0 px-5 sm:px-7 md:px-9 lg:px-10">
+            <div class="border border-black bg-white rounded-xl shadow font-semibold px-10 py-5">
+              <%- element %>
             </div>
           </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Ready Stock
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Quick Supply
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Competitive Rates
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Lab Tested Reports
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Quality Certificates
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Effective Packaging
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Third Party Inspection
-            </div>
-          </div>
-          <div class="flex-shrink-0 px-10">
-            <div class="bg-white rounded-xl shadow font-semibold px-10 py-5">
-              Experienced Qualified Team
-            </div>
-          </div>
+          <% }) %>
         </div>
       </div>
       <p class="text-justify">

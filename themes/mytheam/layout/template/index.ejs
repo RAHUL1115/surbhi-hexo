@@ -8,12 +8,8 @@
         Mumbai. Surbhi Metal and Alloys is a team of experienced industry experts
         who deal in manufacturing, supplying and trading of ferrous and non
         ferrous metals.
-        <br />
-        <br />
         We manufacture and supply a variety of ferrous and non ferrous metals such
         as iron, stainless steel, aluminium, copper, brass, etc.
-        <br />
-        <br />
         We manufacture and trade various products such as <a class="text-blue-500" href="products/pipe.html">pipes</a>,
         <a class="text-blue-500" href="products/sheets.html">sheets</a>, <a class="text-blue-500" href="products/bars.html">bars</a>,
         <a class="text-blue-500" href="products/flanges.html">flanges</a>, <a class="text-blue-500" href="products/fastener.html">fasteners</a>,
@@ -31,7 +27,7 @@
     <h2 class="text-4xl text-center data-scroll nunito font-bold">Products We Offer</h2>
     <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3">
       <% site.data.sitedata.products.forEach((element,index) => { %>
-      <% if (index>5) { return }%>
+      <% if (index>5) { return } %>
       <a href="products/<%-element[2] %>">
         <div class="mx-3 h-72 border-black border hover:border-transparent transform transition-all duration-300 rounded-xl overflow-hidden hover:scale-105">
           <img class="object-center w-full h-full" src="img/<%-element[1] %>">
@@ -94,14 +90,26 @@
   </div>
 </div>
 
-<div class="my-5 space-y-3">
-  <div class="grid grid-cols-1 gap-y-2 gap-x-2 sm:grid-cols-2 lg:grid-cols-3">
+<div class="container mx-auto px-3 py-5 space-y-4">
+  <h2 class="text-4xl text-center data-scroll nunito font-bold">Gallery</h2>
+  <div class="grid grid-cols-1 gap-y-2 gap-x-2 sm:grid-cols-4 lg:grid-cols-4">
     <% site.data.sitedata.images.forEach((element,index) => { %>
-    <% if (index > 8) { return }%>
-    <img class="object-center object-cover w-full h-72 img-scroll" src="img/<%- element %>">
+    <% if (index > 2) { %>
+    <% if (index > 3) { return; } %>
+    <div class="relative h-72 border group rounded border-black">
+      <a href="gallery.html">
+        <img style=" filter: blur(2px);" class="object-center rounded object-cover w-full h-full img-scroll" src="img/<%- element %>">
+        <p class="absolute z-10 top-1/2 text-center text-xl group-hover:text-blue-600 w-full">
+          View more
+        </p>
+      </a>
+    </div>
+    <% } else { %>
+    <img class="object-center border border-black rounded object-cover w-full h-72 img-scroll" src="img/<%- element %>">
+    <% } %>
     <% }) %>
   </div>
-  <p class="text-center">
-    <a class="text-purple-600 hover:text-black transition-all duration-300" href="gallery.html">See more...</a>
-  </p>
 </div>
+<script>
+  let hero = true;
+</Script>
