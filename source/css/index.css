@@ -2,25 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Numans&display=swap");
 
+
+/* var */
+:root{
+    --p1 : rgb(239, 247, 255);
+    --p2 : rgb(248, 220, 129);
+    --p3 : rgb(162, 208, 193);
+    --p4 : rgb(33, 65, 81);
+}
+
 /* ! scroll bar */
 body::-webkit-scrollbar-track {
   border-radius: 1px;
-  background-color: rgba(239, 247, 255);
+  background-color: var(--p1);
 }
 
 body::-webkit-scrollbar {
   width: 4px;
-  background-color: rgba(239, 247, 255);
+  background-color: var(--p1);
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: rgba(33, 65, 81);
-}
-
-:root{
-    --distance : 0px;
-    --duration : 14000; 
+  background-color: var(--p4);
 }
 
 /* * main css */
@@ -74,12 +78,6 @@ h6 {
   transform: scale(0);
 }
 
-/* css for about scroll */
-.about-scroll{
-    animation: aboutscroll;
-    animation-duration: 2000;
-}
-
 /* ! update existing style */
 .swiper-wrapper {
   height: 100vh !important;
@@ -103,13 +101,4 @@ h6 {
 .data-scroll{
   transition: all 1s;
   transition-timing-function: ease-in-out;
-}
-
-/* animation */
-@keyframes aboutscroll{
-    from{
-        margin-left: 0px;
-    }to{
-        margin-left: 100px;
-    }
 }

@@ -11,6 +11,28 @@
 <div class="px-3 py-5 space-y-4 md:px-16">
   <h1 class="text-4xl text-center nunito font-bold">Pipes</h1>
   <article class="space-y-10">
+    <div class="space-y-5">
+      <p>Type of pipes we offer</p>
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
+        <% let pipes = [
+        ["pipes1.jpg","Stainless & Duplex Steel"],
+        ["pipes2.jpg","Carbon & Alloy Steel"],
+        ["pipes3.jpg","Nickel & Copper Alloy"],
+        ["pipes4.jpg","Hastelloy"],
+        ["pipes5.jpg","Inconel"],
+        ["pipes6.jpg","Incoloy"],
+        ["pipes7.jpg","Monel"],
+        ["pipes8.jpg","Nironics 50"],
+        ["pipes9.jpg","Nironics 60"],
+        ["pipes10.jpg","Titanium"],
+      ] %>
+        <% pipes.forEach(element => { %>
+        <div class="shadow-lg rounded-xl overflow-hidden"><img src="../img/pipes/<%- element[0] %>" alt="" width="400" height="300">
+          <p class="text-center"><%- element[1] %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
     <div class="space-y-3">
       <h2 class="font-bold text-xl text-p4">Stainless & Duplex Steel</h2>
       <div class="flex items-start md:flex-row flex-col">
@@ -175,5 +197,6 @@
         </p>
       </div>
     </div>
+    <p class="text-center">Didn't get the required info <a href="../contact.html" class="text-blue-500">Contact us</a> To to get More info</p>
   </article>
 </div>
