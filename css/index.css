@@ -18,6 +18,11 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(33, 65, 81);
 }
 
+:root{
+    --distance : 0px;
+    --duration : 14000; 
+}
+
 /* * main css */
 .nunito {
   font-family: "Nunito", sans-serif !important;
@@ -69,6 +74,12 @@ h6 {
   transform: scale(0);
 }
 
+/* css for about scroll */
+.about-scroll{
+    animation: aboutscroll;
+    animation-duration: 2000;
+}
+
 /* ! update existing style */
 .swiper-wrapper {
   height: 100vh !important;
@@ -92,4 +103,13 @@ h6 {
 .data-scroll{
   transition: all 1s;
   transition-timing-function: ease-in-out;
+}
+
+/* animation */
+@keyframes aboutscroll{
+    from{
+        margin-left: 0px;
+    }to{
+        margin-left: 100px;
+    }
 }

@@ -14,7 +14,15 @@ var navopen = false;
 // * event listeners
 //! on document only load
 document.addEventListener("DOMContentLoaded", (e) => {
-  heroimgresize(e);
+  try {
+    if (hero) {
+      heroimgresize(e);
+    } else {
+      console.log("workking");
+    }
+  } catch (error) {
+    console.log("workking");
+  }
   swiper(e);
   scrollout(e);
 });
@@ -210,7 +218,7 @@ function aboutscroll(e) {
       el.innerHTML += el.innerHTML;
       el.animate(
         [
-          { Transform: "translateX(0px)" },
+          { transform: "translateX(0px)" },
           { transform: "translateX(-" + sw + "px)" },
         ],
         {
@@ -220,7 +228,6 @@ function aboutscroll(e) {
       );
     });
   } catch (error) {
-    console.log(error);
   }
 }
 
