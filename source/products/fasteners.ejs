@@ -3,7 +3,7 @@
 "title": "Fasteners | Surbhi Metals and Alloy",
 "description": "Helo",
 "prepath": "../",
-"product":"Fasteners",
+"page":"Fasteners",
 "layout":"template/product"
 }
 ---
@@ -11,8 +11,8 @@
 <div class="px-3 py-5 space-y-4 md:px-16">
   <h1 class="text-4xl text-center nunito font-bold">Fasteners</h1>
   <article class="space-y-5">
-    <h2>Fasteners we can offer</h2>
-    <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
+    <h2>Fasteners we offer</h2>
+    <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
       <% let fasteners = [
         ["fasteners1.jpg","Lateral Tee"],
         ["fasteners2.jpg","Socket Weld Coupling"],
@@ -24,7 +24,7 @@
       ] %>
       <% fasteners.forEach(element => { %>
       <div class="shadow-lg rounded-xl overflow-hidden"><img src="../img/fasteners/<%- element[0] %>" alt="" width="400" height="300">
-        <p class="text-center"><%- element[0] %></p>
+        <p class="text-center"><%- element[1] %></p>
       </div>
       <% }) %>
     </div>

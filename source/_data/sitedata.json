@@ -9,7 +9,6 @@
   "products": [
     ["Bars", "bars.jpg", "bars.html"],
     ["Buttweld fittings", "buttweld-fittings.jpg", "buttweld-fittings.html"],
-    ["Channel", "channel.jpg", "channel.html"],
     ["Fasteners", "fasteners.jpg", "fasteners.html"],
     ["Flanges", "flanges.jpg", "flanges.html"],
     ["Forged fittings", "forged-fittings.jpg", "forged-fittings.html"],
@@ -19,7 +18,6 @@
   "images": [
     "bars.jpg",
     "buttweld-fittings.jpg",
-    "channel.jpg",
     "fasteners.jpg",
     "flanges.jpg",
     "forged-fittings.jpg",

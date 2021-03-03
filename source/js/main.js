@@ -14,15 +14,7 @@ var navopen = false;
 // * event listeners
 //! on document only load
 document.addEventListener("DOMContentLoaded", (e) => {
-  try {
-    if (hero) {
-      heroimgresize(e);
-    } else {
-      console.log("workking");
-    }
-  } catch (error) {
-    console.log("workking");
-  }
+  heroimgresize(e);
   swiper(e);
   scrollout(e);
 });
@@ -172,14 +164,27 @@ function navBarAnim(e) {
 function heroimgresize(e) {
   try {
     let slideImg = document.querySelectorAll(".slideimg");
-    let swiper = document.querySelector(".swiper-wrapper");
     slideImg.forEach((element) => {
-      if (swiper.clientWidth > swiper.clientHeight) {
-        element.classList.remove("h-full");
-        element.classList.add("w-full");
+      let wrapper = element.parentElement.parentElement;
+      let slider = element.parentElement;
+      if (wrapper.classList.contains("index")) {
+        if (wrapper.clientWidth > wrapper.clientHeight) {
+          element.classList.add("imgw");
+        } else {
+          element.classList.add("imgh");
+        }
       } else {
-        element.classList.remove("w-full");
-        element.classList.add("h-full");
+        if (slider.clientWidth > slider.clientHeight) {
+          element.classList.add("imgw");
+          if (slider.clientHeight >= element.clientHeight) {
+            element.classList.add("imgh");
+          }
+        } else {
+          element.classList.add("imgh");
+          if (slider.clientWidth >= element.clientWidth) {
+            element.classList.add("imgw");
+          }
+        }
       }
     });
   } catch (error) {
@@ -227,8 +232,7 @@ function aboutscroll(e) {
         }
       );
     });
-  } catch (error) {
-  }
+  } catch (error) {}
 }
 
 // ! swiper js
@@ -250,4 +254,41 @@ function swiper(e) {
       },
     });
   } catch (error) {}
+}
+
+async function sendmail() {
+  let name = enquiry.name;
+  let email = enquiry.name;
+  let phone = enquiry.phone;
+  let message = enquiry.message;
+  await Email.send({
+    Host: "smtp.gmail.com",
+    Username: "reputesteel@gmail.com",
+    Password: "draxqumkigtkqtyt",
+    To: "reputesteel@gmail.com",
+    From: email,
+    Subject: "Enquire from " + name,
+    Body:
+      "<strong>Name</strong> : " +
+      name +
+      "<br><br><strong>Email</strong> : " +
+      email +
+      "<br><br><strong>Phone</strong> : " +
+      phone +
+      "<br><br> <strong>Message</strong> : " +
+      message,
+  })
+    .then((result) => {
+      name = "";
+      email = "";
+      phone = "";
+      message = "";
+    })
+    .catch((err) => {
+      alert("error");
+      name = "";
+      email = "";
+      phone = "";
+      message = "";
+    });
 }

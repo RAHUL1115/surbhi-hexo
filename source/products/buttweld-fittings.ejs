@@ -3,12 +3,31 @@
 "title": "Buttweld Fittings | Surbhi Metals and Alloy",
 "description": "Helo",
 "prepath": "../",
-"product":"Bars",
+"page":"Buttweld Fittings",
 "layout":"template/product"
 }
 ---
 
 <div class="px-3 py-5 space-y-4 md:px-16">
   <h1 class="text-4xl text-center nunito font-bold">Buttweld Fittings</h1>
-
+  <div class="space-y-5">
+    <p>Buttweld Fittings we offer</p>
+    <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
+      <% let buttweld = [
+        ["buttweld1.jpg","Elbow"],
+        ["buttweld2.jpg","Tee"],
+        ["buttweld3.jpg","Cross"],
+        ["buttweld4.jpg","Reducer"],
+        ["buttweld5.jpg","Bend"],
+        ["buttweld6.jpg","Stub End"],
+        ["buttweld7.jpg","Split Tee"],
+        ["buttweld8.jpg","End Cap"],
+      ] %>
+      <% buttweld.forEach(element => { %>
+      <div class="shadow-lg rounded-xl overflow-hidden"><img src="../img/buttweld/<%- element[0] %>" alt="" width="400" height="300">
+        <p class="text-center"><%- element[1] %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
 </div>

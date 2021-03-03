@@ -79,14 +79,31 @@ h6 {
 }
 
 /* ! update existing style */
-.swiper-wrapper {
+.hero-full{
   height: 100vh !important;
   width: 100vw !important;
 }
+
+.hero-half{
+  height: 20rem !important;
+  width: 100vw !important;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 30px !important;
   color: rgb(248, 220, 129);
+}
+
+.imgw{
+    width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+}
+.imgh{
+    height: 100% !important;
+    min-height: 100% !important;
+    width: auto !important;
 }
 
 /* ! scroll out js */
