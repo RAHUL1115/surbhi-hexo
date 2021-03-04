@@ -96,10 +96,10 @@
     <% site.data.sitedata.images.forEach((element,index) => { %>
     <% if (index > 2) { %>
     <% if (index > 3) { return; } %>
-    <div class="relative h-72 border group rounded border-black">
+    <div class="relative group rounded">
       <a href="gallery.html">
-        <img style=" filter: blur(2px);" class="object-center rounded object-cover w-full h-full img-scroll" src="img/<%- element %>">
-        <p class="absolute z-10 top-1/2 text-center text-xl group-hover:text-blue-600 w-full">
+        <img style=" filter: blur(10px);" class="object-center border border-black rounded object-cover w-full h-72 img-scroll" src="img/<%- element %>">
+        <p class="absolute z-10 top-1/2 text-center text-xl font-bold transition duration-500 hover:opacity-100 hover:text-p2 w-full">
           View more
         </p>
       </a>
