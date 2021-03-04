@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start":"nodemon -e html,md,less,ejs --ignore public/ -L --exec hexo generate",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
     "dev": "postcss ./style.css -o ./source/css/tailwind.min.css",
-    "prod": "NODE_ENV=production postcss ./style.css -o ./public/css/tailwind.min.css"
+    "prod": "NODE_ENV=production postcss ./style.css -o ./public/css/tailwind.min.css",
+    "push" : "git subtree push --prefix public origin gh-pages"
   },
   "hexo": {
     "version": "5.3.0"
