@@ -1,0 +1,30 @@
+---
+{
+"title": "Bars | Surbhi Metals and Alloy",
+"description": "Helo",
+"prepath": "../",
+"page":"Bars",
+"layout":"template/product"
+}
+---
+
+<div class="px-3 py-5 space-y-4 md:px-16">
+  <h1 class="text-4xl text-center nunito font-bold">Beam</h1>
+  <article class="space-y-10">
+    <div class="space-y-5">
+      <p>Beams we offer</p>
+      <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
+        <% let beam = [
+        ["beam1.jpg","H Beam"],
+        ["beam2.jpg","T Beam"],
+      ] %>
+        <% beam.forEach(element => { %>
+        <div class="shadow-lg rounded-xl border overflow-hidden"><img src="../img/beam/<%- element[0] %>" alt="" width="400" height="300">
+          <p class="text-center"><%- element[1] %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <p class="text-center">Didn't get the required info <a href="../contact.html" class="text-blue-500">Contact us</a> To to get More info</p>
+  </article>
+</div>
