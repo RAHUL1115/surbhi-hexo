@@ -10,10 +10,11 @@
 
 <div class="px-3 py-5 space-y-4 md:px-16">
   <h1 class="text-4xl text-center nunito font-bold">Buttweld Fittings</h1>
-  <div class="space-y-5">
-    <p>Buttweld Fittings we offer</p>
-    <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
-      <% let buttweld = [
+  <article class="space-y-10">
+    <div class="space-y-5">
+      <p>Buttweld Fittings we offer</p>
+      <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
+        <% let buttweld = [
         ["buttweld1.jpg","Elbow"],
         ["buttweld2.jpg","Tee"],
         ["buttweld3.jpg","Cross"],
@@ -23,11 +24,271 @@
         ["buttweld7.jpg","Split Tee"],
         ["buttweld8.jpg","End Cap"],
       ] %>
-      <% buttweld.forEach(element => { %>
-      <div class="shadow-lg rounded-xl overflow-hidden"><img src="../img/buttweld/<%- element[0] %>" alt="" width="400" height="300">
-        <p class="text-center"><%- element[1] %></p>
+        <% buttweld.forEach(element => { %>
+        <div class="shadow-lg rounded-xl overflow-hidden"><img src="../img/buttweld/<%- element[0] %>" alt="" width="400" height="300">
+          <p class="text-center"><%- element[1] %></p>
+        </div>
+        <% }) %>
       </div>
-      <% }) %>
     </div>
-  </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Buttwelded Pipe Elbow Production Range</h2>
+      <table class="border w-full poppins rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold">Outside Diameter:</td>
+            <td class="poppins">Seamless Elbow ( 1/2″～24″), ERW / Welded / Fabricated Elbow (1/2″～48″)</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold">Wall Thickness:</td>
+            <td class="poppins">3mm – 40mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60, SCH80, SCH120,
+              SCH140, SCH160, XXS</td>
+          </tr>
+          <tr>
+            <td class="font-bold">Bending Radius:</td>
+            <td class="poppins">R=1D – 10D, 15D, 20D</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold">Product’s Angle:</td>
+            <td class="poppins">5° – 180° Elbows, 90° and 45° Long Radius Elbows, Long Radius Returns, Short Radius
+              Elbows and Returns</td>
+          </tr>
+          <tr>
+            <td class="font-bold">Value Added Services:</td>
+            <td class="poppins">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand Blasting,
+              Threading, Soldering</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold">Production Grades:</td>
+            <td class="poppins">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature Steel, Carbon
+              Steel, Cupro Nickel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Buttweld Pipe Tee Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">Seamless Pipe Tee ( 1/2″～24″), ERW / Welded / Fabricated Pipe Tee
+              (1/2″～48″)</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Types:</td>
+            <td class="border border-gray-300">Equal Tees, Reducing Tees</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300">3mm – 40mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60,
+              SCH80, SCH120, SCH140, SCH160, XXS</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Butt Welded Pipe Cross Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">Seamless Pipe Cross ( 1/2″～24″), ERW / Welded / Fabricated Pipe Cross
+              (1/2″～48″)</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Types:</td>
+            <td class="border border-gray-300">Seamless, Welded, Equal Cross, Reducing Cross</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300">3mm – 40mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60,
+              SCH80, SCH120, SCH140, SCH160, XXS</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Buttweld Pipe Reducer Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">Seamless Pipe Reducer ( 1/2″～24″), ERW / Welded / Fabricated Pipe
+              Reducer (1/2″～48″)</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Types:</td>
+            <td class="border border-gray-300">Concentric Reducers, Eccentric Reducers</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300">3mm – 40mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60,
+              SCH80, SCH120, SCH140, SCH160, XXS</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Pipe End Cap Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">1/2″～48″</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300">2mm – 40mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60,
+              SCH80, SCH120, SCH140, SCH160, XXS</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Steel Pipe Bends/Piggable Bends Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">Seamless Pipe Bends (1/2″ – 24″), ERW / Welded / Fabricated Pipe
+              Bends (2″ – 36″)</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Bending Radius:</td>
+            <td class="border border-gray-300">R=1D, 2D, 3D, 5D, 6D, 8D, 10D or Custom</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Product Angle:</td>
+            <td class="border border-gray-300">0° – 180°</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">Stub End Production Range</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">Outside Diameter:</td>
+            <td class="border border-gray-300">1/2″ – 24″</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Type:</td>
+            <td class="border border-gray-300">Long/Short Stub Ends</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300"> 2mm – 100 mm / SCH5, SCH10, SCH20, SCH30, SCH40, STD, SCH80, XS,
+              SCH60, SCH120, SCH140, SCH160, XXS</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Production Grades:</td>
+            <td class="border border-gray-300">Stainless Steel, Alloy Steel, Duplex, Nickel Alloys, Low temperature
+              Steel, Carbon Steel, Cupro Nickel</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Value Added Services:</td>
+            <td class="border border-gray-300">Hot Dipped Galvanizing, Epoxy &amp; FBE Coating, Electro Polish, Sand
+              Blasting, Threading, Soldering</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-3">
+      <h2 class="text-xl text-p4">SPLIT TEE SPECIFICATION</h2>
+      <table class="w-full border rounded overflow-hidden">
+        <tbody>
+          <tr class="bg-p3">
+            <td class="font-bold border border-gray-300">ANSI/ASME:</td>
+            <td class="border border-gray-300">ASTM A403 / ASME SA403, ANSI B16.9, ASME B16.25, ASME B16.28, MSS
+              SP-43.</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">DIN :</td>
+            <td class="border border-gray-300">DIN2605, DIN2615, DIN2616, DIN2617, DIN28011</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">EN :</td>
+            <td class="border border-gray-300">EN10253-1, EN10253-2</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Schedule :</td>
+            <td class="border border-gray-300">SCH20, SCH30, SCH40, STD, SCH80, XS, SCH60, SCH80, SCH120, SCH140,
+              SCH160, XXS</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Size:</td>
+            <td class="border border-gray-300">2″~36″ 15-1200</td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Pressure :</td>
+            <td class="border border-gray-300">150#~2500#</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Wall Thickness:</td>
+            <td class="border border-gray-300"> Sch 10- Sch160 </td>
+          </tr>
+          <tr class="bg-p6 bg-opacity-10">
+            <td class="font-bold border border-gray-300">Material:</td>
+            <td class="border border-gray-300">Stainless Steel, Carbon Steel, Alloy Steel</td>
+          </tr>
+          <tr>
+            <td class="font-bold border border-gray-300">Form:</td>
+            <td class="border border-gray-300">Split Tees</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
 </div>
