@@ -11,20 +11,23 @@
     <meta name="description" content="<%- page.description %>" />
     <meta property="og:description" content="<%- page.description %>" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://webinclusives.com/" />
-    <meta property="og:site_name" content="web inclusives" />
-    <meta property="og:image" content="https://webinclusives.com/img/webinclusiveslogo.png" />
-    <link rel="canonical" href="https://webinclusives.com/" />
-    <link rel="alternate" hreflang="x-default" href=" https://webinclusives.com" />
-
+    <meta property="og:url" content="<%- site.data.sitedata.website.url %>" />
+    <meta property="og:site_name" content="<%- site.data.sitedata.website.sitename %>" />
+    <meta property="og:image" content="<%- site.data.sitedata.website.image %>" />
+    <link rel="alternate" hreflang="x-default" href="<%- site.data.sitedata.website.url %>" />
+    <% if(page.path=="index.html" || page.path=="" || page.path=="/") { %>
+    <link rel="canonical" href="<%- site.data.sitedata.website.url %>" />
+    <% } else { %>
+    <link rel=" canonical" href="<%= site.data.sitedata.website.url +"/"+ page.path %>" />
+    <% } %>
     <!-- * scripts -->
     <script type="application/ld+json">
       {
-        "url": "https://webinclusives.com/",
-        "headline": "web inclusives",
-        "image": "https://webinclusives.com/img/webinclusiveslogo.png",
+        "url": "<%- site.data.sitedata.website.url %>",
+        "headline": "<%- site.data.sitedata.website.headline %>",
+        "image": "<%- site.data.sitedata.website.image %>",
         "@type": "WebSite",
-        "name": "web inclusives",
+        "name": "<%- site.data.sitedata.website.sitename %>",
         "@context": "https://schema.org"
       }
     </script>

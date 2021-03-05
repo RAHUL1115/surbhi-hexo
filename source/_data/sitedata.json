@@ -1,10 +1,10 @@
 {
   "website": {
-    "url": "",
+    "sitename": "surbhi metal",
+    "headline":"surbhi metal and allys",
+    "url": "https://surbhimetal.in",
     "name": "surbhi metal & alloys",
-    "image": "",
-    "canonical": "",
-    "alternate": ""
+    "image": "https://webinclusives.com/img/surbhi.png"
   },
   "products": [
     ["Pipes", "pipes.jpg", "pipes.html"],
