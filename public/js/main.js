@@ -271,7 +271,7 @@ function swiper(e) {
 }
 
 function openWA() {
-  var win = window.open("https://wa.me/919820442936", "_blank");
+  var win = window.open("https://wa.me/919819211601", "_blank");
   win.focus();
 }
 
