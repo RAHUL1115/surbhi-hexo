@@ -43,6 +43,11 @@
   </head>
 
   <body class="overflow-x-hidden bg-p1">
+    <% if(!(page.page == "Contact Us")) { %>
+    <div onclick="openWA()" class="fixed z-20 right-2 bottom-2 p-5 rounded-full bg-green-500 h-14 w-14 flex justify-center items-center">
+      <i class="fab fa-whatsapp text-black text-3xl"></i>
+    </div>
+    <% } %>
     <%- partial('partial/navbar') %>
     <% if(!page.hero) { %>
     <%- partial('partial/hero2') %>
@@ -56,6 +61,10 @@
     <script src="<%- page.prepath %>js/swiper-bundle.min.js"></script>
     <!-- * scroll out js -->
     <script src="<%- page.prepath %>js/scroll-out.min.js"></script>
+    <!-- * smtp only in conatct html -->
+    <% if(page.page == "Contact Us") { %>
+    <script src="<%- page.prepath %>js/smtp.js"></script>
+    <% } %>
     <!-- * own -->
     <script src="<%- page.prepath %>js/main.js"></script>
   </body>

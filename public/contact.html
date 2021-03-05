@@ -41,6 +41,7 @@
   <meta name="generator" content="Hexo 5.3.0"></head>
 
   <body class="overflow-x-hidden bg-p1">
+    
     <header id="navbar" class="fixed z-20 w-full bg-p4 bg-opacity-50 rounded-b lg:px-16 lg:py-2 py-2 px-4 transition-all duration-500 ease-in-out">
   <div class="container mx-auto flex items-center flex-row">
     <div>
@@ -153,7 +154,7 @@
     </div>
   </div>
   <div class="w-4/5 rounded-md p-4 -mt-7 border shadow-md mx-auto bg-white z-10 relative">
-    <p class="text-blue-500 space-x-2"><a href="Contact Usindex.html">Home</a> <span>></span> <span class="text-p4">Contact Us</span></p>
+    <p class="text-blue-500 space-x-2"><a href="index.html">Home</a> <span>></span> <span class="text-p4">Contact Us</span></p>
   </div>
 </div>
     
@@ -179,7 +180,7 @@
               <textarea id="message" placeholder="Your Message..." rows="4" class="w-full py-2 px-4 bg-white rounded outline-none text-xl"></textarea>
             </div>
             <div class="bg-white mt-6 rounded">
-              <button click="sendmail" class="w-full py-2 px-4 bg-p2 text-black bg-opacity-90 rounded outline-none text-xl">Send<button>
+              <button onclick="sendmail()" class="w-full py-2 px-4 bg-p2 text-black bg-opacity-90 rounded outline-none text-xl">Send<button>
             </div>
             <p id="message" class="text-p1 text-center mt-5">
               <p>
@@ -225,15 +226,15 @@
         <div class="space-y-1">
           
           <p class="text-indigo-900">
+            <a class="hover:text-blue-600" href="/products/pipes.html">Pipes</a>
+          </p>
+          
+          <p class="text-indigo-900">
             <a class="hover:text-blue-600" href="/products/bars.html">Bars</a>
           </p>
           
           <p class="text-indigo-900">
-            <a class="hover:text-blue-600" href="/products/buttweld-fittings.html">Buttweld fittings</a>
-          </p>
-          
-          <p class="text-indigo-900">
-            <a class="hover:text-blue-600" href="/products/fasteners.html">Fasteners</a>
+            <a class="hover:text-blue-600" href="/products/sheets.html">Sheets</a>
           </p>
           
           <p class="text-indigo-900">
@@ -241,15 +242,15 @@
           </p>
           
           <p class="text-indigo-900">
+            <a class="hover:text-blue-600" href="/products/fasteners.html">Fasteners</a>
+          </p>
+          
+          <p class="text-indigo-900">
+            <a class="hover:text-blue-600" href="/products/buttweld-fittings.html">Buttweld fittings</a>
+          </p>
+          
+          <p class="text-indigo-900">
             <a class="hover:text-blue-600" href="/products/forged-fittings.html">Forged fittings</a>
-          </p>
-          
-          <p class="text-indigo-900">
-            <a class="hover:text-blue-600" href="/products/pipes.html">Pipes</a>
-          </p>
-          
-          <p class="text-indigo-900">
-            <a class="hover:text-blue-600" href="/products/sheets.html">Sheets</a>
           </p>
           
         </div>
@@ -328,6 +329,10 @@
     <script src="js/swiper-bundle.min.js"></script>
     <!-- * scroll out js -->
     <script src="js/scroll-out.min.js"></script>
+    <!-- * smtp only in conatct html -->
+    
+    <script src="js/smtp.js"></script>
+    
     <!-- * own -->
     <script src="js/main.js"></script>
   </body>

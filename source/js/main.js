@@ -53,7 +53,9 @@ function updateWidHig(e) {
       window.innerHeight ||
       document.documentElement.clientHeight ||
       document.body.clientHeight;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // !function for handling all scroll out js thing
@@ -125,7 +127,9 @@ function scrollout(e) {
         }
       },
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 // ! function for nav bar link-text and link-outline animation
@@ -141,7 +145,9 @@ function navTextAnim(e) {
         element.children[1].classList.remove("w-full");
       });
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // ! function for change nav bar color animation on scroll
@@ -157,7 +163,9 @@ function navBarAnim(e) {
       document.getElementById("navbar").classList.remove("shadow-lg");
       document.getElementById("navbar").classList.add("bg-opacity-50");
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // ! functoin for hero images resize
@@ -188,7 +196,7 @@ function heroimgresize(e) {
       }
     });
   } catch (error) {
-    console.log("hero image resize");
+    console.log(error);
   }
 }
 
@@ -211,7 +219,9 @@ function navbarclick(e) {
         element.classList.add("navopen");
       }
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // ! news scroll (only for about and all product page page)
@@ -232,7 +242,9 @@ function aboutscroll(e) {
         }
       );
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 // ! swiper js
@@ -253,42 +265,52 @@ function swiper(e) {
         prevEl: ".swiper-button-prev",
       },
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 
+function openWA() {
+  var win = window.open("https://wa.me/919820442936", "_blank");
+  win.focus();
+}
+
+// ! send mail
 async function sendmail() {
-  let name = enquiry.name;
-  let email = enquiry.name;
-  let phone = enquiry.phone;
-  let message = enquiry.message;
+  console.log("working");
+  let name = document.querySelector("#name");
+  let email = document.querySelector("#email");
+  let phone = document.querySelector("#phone");
+  let message = document.querySelector("#message");
   await Email.send({
     Host: "smtp.gmail.com",
-    Username: "reputesteel@gmail.com",
-    Password: "draxqumkigtkqtyt",
-    To: "reputesteel@gmail.com",
-    From: email,
-    Subject: "Enquire from " + name,
+    Username: "surbhimetalalloys@gmail.com",
+    Password: "luuxnkajzjqjmhae",
+    To: "rahulgupta.ra.com@gmail.com",
+    From: email.value,
+    Subject: "Enquire from : " + name.value,
     Body:
       "<strong>Name</strong> : " +
-      name +
+      name.value +
       "<br><br><strong>Email</strong> : " +
-      email +
+      email.value +
       "<br><br><strong>Phone</strong> : " +
-      phone +
+      phone.value +
       "<br><br> <strong>Message</strong> : " +
-      message,
+      message.value,
   })
     .then((result) => {
-      name = "";
-      email = "";
-      phone = "";
-      message = "";
+      alert(result);
+      name.value = "";
+      email.value = "";
+      phone.value = "";
+      message.value = "";
     })
     .catch((err) => {
-      alert("error");
-      name = "";
-      email = "";
-      phone = "";
-      message = "";
+      alert(err);
+      name.value = "";
+      email.value = "";
+      phone.value = "";
+      message.value = "";
     });
 }
