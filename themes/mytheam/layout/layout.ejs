@@ -2,6 +2,25 @@
 <html lang="en">
 
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NZVW6HN');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -20,7 +39,8 @@
     <% } else { %>
     <link rel=" canonical" href="<%= site.data.sitedata.website.url +"/"+ page.path %>" />
     <% } %>
-    <!-- * scripts -->
+
+    <!-- scripts -->
     <script type="application/ld+json">
       {
         "url": "<%- site.data.sitedata.website.url %>",
@@ -32,20 +52,17 @@
       }
     </script>
 
-    <% if(page.path=="index.html" || page.path=="" || page.path=="/"){ %>
-    <!-- * Global site tag (gtag.js) - Google Analytics -->
-    <% } %>
-
     <link defer href="<%- page.prepath %>css/tailwind.min.css" rel="stylesheet" />
     <link defer href="<%- page.prepath %>css/index.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/83fa0c17b8.js" crossorigin="anonymous"></script>
 
-    <!-- * slider js and css  -->
+    <!-- slider js and css  -->
     <link rel="stylesheet" href="<%- page.prepath %>css/swiper-bundle.min.css" />
 
   </head>
 
   <body class="overflow-x-hidden bg-p1">
+
     <% if(!(page.page == "Contact Us")) { %>
     <div onclick="openWA()" class="fixed z-20 right-2 bottom-2 p-5 rounded-full bg-green-500 h-14 w-14 flex justify-center items-center">
       <i class="fab fa-whatsapp text-black text-3xl"></i>
@@ -59,17 +76,26 @@
     <% } %>
     <%- body %>
     <%- partial('partial/footer') %>
-    <!-- ! scripts -->
-    <!-- * slidr js -->
+
+    <!-- slidr js -->
     <script src="<%- page.prepath %>js/swiper-bundle.min.js"></script>
-    <!-- * scroll out js -->
+
+    <!-- scroll out js -->
     <script src="<%- page.prepath %>js/scroll-out.min.js"></script>
-    <!-- * smtp only in conatct html -->
+
+    <!--  smtp only in conatct html -->
     <% if(page.page == "Contact Us") { %>
     <script src="<%- page.prepath %>js/smtp.js"></script>
     <% } %>
-    <!-- * own -->
+
+    <!-- own -->
     <script src="<%- page.prepath %>js/main.js"></script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZVW6HN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 
 </html>
