@@ -12,6 +12,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp://194.5.156.49
-        username: ${{secrets.FTP_USER}}
-        password: ${{secrets.FTP_PASSWORD}}
-        local-dir: ./public/
+        username: u462541493.surbhimetal.in
+        password: ca9819211601
+        dry-run: true
