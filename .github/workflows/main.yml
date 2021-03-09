@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp://reputesteel.com
+        server: ftp://194.5.156.49
         username: ${{secrets.FTP_USER}}
         password: ${{secrets.FTP_PASSWORD}}
         local-dir: ./public/
