@@ -4,7 +4,6 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
@@ -12,7 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp://194.5.156.49/
+        server: ftp://194.5.156.49
         username: u462541493.surbhimetal.in
         password: ca9819211601
-        dry-run: true
+        local-dir: ./public/
